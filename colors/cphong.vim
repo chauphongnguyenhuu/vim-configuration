@@ -60,5 +60,7 @@ hi Macro        ctermfg=lightmagenta
 hi Todo                                                 guifg=orangered guibg=yellow2
 hi Number       ctermfg=yellow
 hi SpecialChar  ctermfg=darkyellow
+hi Pmenu        ctermbg=Gray                            guibg=Gray
+hi PmenuSel     ctermbg=Magenta ctermfg=White           guibg=Magenta guifg=White
 
 "vim: sw=4
