@@ -19,7 +19,7 @@ set showcmd
 set wildmenu
 
 let mapleader=','
-let g:netrw_banner=0 " no banner spam in directory mode
+" let g:netrw_banner=0 " no banner spam in directory mode
 
 let $MYVIMDIR=split(&runtimepath, ',')[0]
 nnoremap <F2> :e $MYVIMRC<CR>
