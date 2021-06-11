@@ -1,5 +1,3 @@
-let $MYVIMDIR=split(&runtimepath, ',')[0]
-
 filetype plugin indent on
 syntax on
 colorscheme cphong
@@ -20,9 +18,12 @@ set clipboard=unnamed
 set showcmd
 set wildmenu
 
+let mapleader=','
 let g:netrw_banner=0 " no banner spam in directory mode
 
-let mapleader=','
+let $MYVIMDIR=split(&runtimepath, ',')[0]
+nnoremap <F2> :e $MYVIMRC<CR>
+nnoremap <F3> :e $MYVIMDIR<CR>
 
 imap jk <ESC>
 imap jj <ESC>
@@ -32,8 +33,6 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-nnoremap <F2> :e $MYVIMRC<CR>
-nnoremap <F3> :e $MYVIMDIR<CR>
 nnoremap <leader>ee :e %:p:h<CR>
 nnoremap <leader>ew :e <C-R>=getcwd()<CR><CR>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
