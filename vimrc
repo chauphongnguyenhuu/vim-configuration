@@ -28,11 +28,6 @@ nnoremap <F3> :e $MYVIMDIR<CR>
 imap jk <ESC>
 imap jj <ESC>
 
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
-
 nnoremap <leader>ee :e %:p:h<CR>
 nnoremap <leader>ew :e <C-R>=getcwd()<CR><CR>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
