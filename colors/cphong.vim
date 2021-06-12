@@ -11,7 +11,7 @@ if version > 580
     " complaining
     hi clear
     if exists("syntax_on")
-    syntax reset
+        syntax reset
     endif
 endif
 let g:colors_name="cphong"
@@ -45,9 +45,9 @@ hi DiffAdd      ctermbg=4
 hi DiffChange   ctermbg=5
 hi DiffDelete   cterm=bold ctermfg=4 ctermbg=6
 hi DiffText     cterm=bold ctermbg=1
-hi Comment      ctermfg=darkgreen                       guifg=SkyBlue
+hi Comment      ctermfg=DarkGray                        guifg=#808080
 hi Constant     ctermfg=brown                           guifg=#ffa0a0
-hi Special      ctermfg=5                               guifg=navajowhite
+hi Special      ctermfg=Magenta                         guifg=navajowhite
 hi Identifier   ctermfg=6                               guifg=palegreen
 hi Statement    ctermfg=3                               guifg=khaki
 hi PreProc      ctermfg=lightmagenta                    guifg=indianred
@@ -63,4 +63,4 @@ hi SpecialChar  ctermfg=darkyellow
 hi Pmenu        ctermbg=Gray                            guibg=Gray
 hi PmenuSel     ctermbg=Magenta ctermfg=White           guibg=Magenta guifg=White
 
-"vim: sw=4
+" vim: sw=4
