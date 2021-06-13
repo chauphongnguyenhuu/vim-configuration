@@ -16,4 +16,4 @@ nnoremap <buffer> <leader>struct :-1read $HOME/vimfiles/snippets/cpp/struct<CR>$
 nnoremap <buffer> <leader>union :-1read $HOME/vimfiles/snippets/cpp/union<CR>$
 
 "command! MakeTags execute "!ctags -f " . ctags#get_ctags_file_path() . " -R --languages=C++ --exclude=.git --exclude=log ."
-command! MakeTags !ctags -R --languages=C++ --exclude=.git --exclude=log .
+command! -buffer MakeTags !ctags -R --languages=C++ --exclude=.git --exclude=log .
