@@ -12,17 +12,17 @@
 " Based on javascript syntax (as is QML)
 
 if !exists("main_syntax")
-  if version < 600
-    syntax clear
-  elseif exists("b:current_syntax")
-    finish
-  endif
-  let main_syntax = 'qml'
+    if version < 600
+        syntax clear
+    elseif exists("b:current_syntax")
+        finish
+    endif
+    let main_syntax = 'qml'
 endif
 
 " Drop fold if it set but vim doesn't support it.
 if version < 600 && exists("qml_fold")
-  unlet qml_fold
+    unlet qml_fold
 endif
 
 syn case ignore
@@ -1066,77 +1066,77 @@ syntax keyword qmlObjectLiteralType ZoomBlur
 " }}}
 
 if get(g:, 'qml_fold', 0)
-  syn match   qmlFunction      "\<function\>"
-  syn region  qmlFunctionFold  start="\<function\>.*[^};]$" end="^\z1}.*$" transparent fold keepend
+    syn match   qmlFunction      "\<function\>"
+    syn region  qmlFunctionFold  start="\<function\>.*[^};]$" end="^\z1}.*$" transparent fold keepend
 
-  syn sync match qmlSync  grouphere qmlFunctionFold "\<function\>"
-  syn sync match qmlSync  grouphere NONE "^}"
+    syn sync match qmlSync  grouphere qmlFunctionFold "\<function\>"
+    syn sync match qmlSync  grouphere NONE "^}"
 
-  setlocal foldmethod=syntax
-  setlocal foldtext=getline(v:foldstart)
+    setlocal foldmethod=syntax
+    setlocal foldtext=getline(v:foldstart)
 else
-  syn keyword qmlFunction         function
-  syn match   qmlArrowFunction    "=>"
-  syn match   qmlBraces           "[{}\[\]]"
-  syn match   qmlParens           "[()]"
+    syn keyword qmlFunction         function
+    syn match   qmlArrowFunction    "=>"
+    syn match   qmlBraces           "[{}\[\]]"
+    syn match   qmlParens           "[()]"
 endif
 
 syn sync fromstart
 syn sync maxlines=100
 
 if main_syntax == "qml"
-  syn sync ccomment qmlComment
+    syn sync ccomment qmlComment
 endif
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
 " For version 5.8 and later: only when an item doesn't have highlighting yet
 if version >= 508 || !exists("did_qml_syn_inits")
-  if version < 508
-    let did_qml_syn_inits = 1
-    command -nargs=+ HiLink hi link <args>
-  else
-    command -nargs=+ HiLink hi def link <args>
-  endif
-  HiLink qmlComment           Comment
-  HiLink qmlLineComment       Comment
-  HiLink qmlCommentTodo       Todo
-  HiLink qmlSpecial           Special
-  HiLink qmlStringS           String
-  HiLink qmlStringD           String
-  HiLink qmlStringT           String
-  HiLink qmlCharacter         Character
-  HiLink qmlNumber            Number
-  HiLink qmlConditional       Conditional
-  HiLink qmlRepeat            Repeat
-  HiLink qmlBranch            Conditional
-  HiLink qmlOperator          Operator
-  HiLink qmlJsType            Type
-  HiLink qmlType              Type
-  HiLink qmlObjectLiteralType Type
-  HiLink qmlStatement         Statement
-  HiLink qmlFunction          Function
-  HiLink qmlArrowFunction     Function
-  HiLink qmlError             Error
-  HiLink qmlNull              Keyword
-  HiLink qmlBoolean           Boolean
-  HiLink qmlRegexpString      String
+    if version < 508
+        let did_qml_syn_inits = 1
+        command -nargs=+ HiLink hi link <args>
+    else
+        command -nargs=+ HiLink hi def link <args>
+    endif
+    HiLink qmlComment           Comment
+    HiLink qmlLineComment       Comment
+    HiLink qmlCommentTodo       Todo
+    HiLink qmlSpecial           Special
+    HiLink qmlStringS           String
+    HiLink qmlStringD           String
+    HiLink qmlStringT           String
+    HiLink qmlCharacter         Character
+    HiLink qmlNumber            Number
+    HiLink qmlConditional       Conditional
+    HiLink qmlRepeat            Repeat
+    HiLink qmlBranch            Conditional
+    HiLink qmlOperator          Operator
+    HiLink qmlJsType            Type
+    HiLink qmlType              Type
+    HiLink qmlObjectLiteralType Type
+    HiLink qmlStatement         Statement
+    HiLink qmlFunction          Function
+    HiLink qmlArrowFunction     Function
+    HiLink qmlError             Error
+    HiLink qmlNull              Keyword
+    HiLink qmlBoolean           Boolean
+    HiLink qmlRegexpString      String
 
-  HiLink qmlIdentifier        Identifier
-  HiLink qmlLabel             Label
-  HiLink qmlException         Exception
-  HiLink qmlMessage           Keyword
-  HiLink qmlGlobal            Keyword
-  HiLink qmlReserved          Keyword
-  HiLink qmlDebug             Debug
-  HiLink qmlConstant          Label
-  HiLink qmlBindingProperty   Label
-  HiLink qmlDeclaration       Function
+    HiLink qmlIdentifier        Identifier
+    HiLink qmlLabel             Label
+    HiLink qmlException         Exception
+    HiLink qmlMessage           Keyword
+    HiLink qmlGlobal            Keyword
+    HiLink qmlReserved          Keyword
+    HiLink qmlDebug             Debug
+    HiLink qmlConstant          Label
+    HiLink qmlBindingProperty   Label
+    HiLink qmlDeclaration       Function
 
-  delcommand HiLink
+    delcommand HiLink
 endif
 
 let b:current_syntax = "qml"
 if main_syntax == 'qml'
-  unlet main_syntax
+    unlet main_syntax
 endif
