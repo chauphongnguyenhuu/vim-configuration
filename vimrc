@@ -1,8 +1,12 @@
 filetype plugin indent on
 syntax on
-colorscheme cphong
+
+if !has("gui_running")
+    colorscheme cphong
+endif
 
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smartindent autoindent
+set nowrap textwidth=0 wrapmargin=0
 set backspace=start,eol,indent
 set hidden
 set path=.,**

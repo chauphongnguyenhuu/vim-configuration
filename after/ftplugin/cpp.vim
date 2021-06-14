@@ -1,7 +1,5 @@
 setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab smartindent autoindent
-setlocal nowrap textwidth=0 wrapmargin=0
 "setlocal path=src,src/**,include,include/**
-setlocal path=.,**
 "execute "setlocal tags+=" . ctags#get_ctags_file_path()
 
 nnoremap <buffer> <C-K><C-O> :call cpp#switch_source_header()<CR>

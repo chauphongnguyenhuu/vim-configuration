@@ -5,4 +5,4 @@ set guioptions-=T " Remove tool bar
 set guioptions-=L " Remove tool bar
 set noerrorbells visualbell t_vb=
 
-colorscheme murphy 
+"colorscheme default
